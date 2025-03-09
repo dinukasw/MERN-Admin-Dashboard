@@ -5,8 +5,8 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme } from "@mui/material";
 import { themeSettings } from "@/theme";
 import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
-import Dashboard from "@/components/dashboard";
-import  Layout  from "@/components/layout";
+import Dashboard from "@/scenes/dashboard";
+import  Layout  from "@/scenes/layout";
 
 function App() {
     const mode = useSelector((state) => state.global.mode);
