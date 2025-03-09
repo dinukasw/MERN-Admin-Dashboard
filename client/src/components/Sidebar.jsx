@@ -144,7 +144,7 @@ const Sidebar = ({
                                         ECOMVISION
                                     </Typography>
                                 </Box>
-                                {isNonMobile && (
+                                {!isNonMobile && (
                                     <IconButton
                                         onClick={() => setIsSidebarOpen(false)}
                                     >
