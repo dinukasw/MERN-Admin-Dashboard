@@ -93,6 +93,7 @@ const navItems = [
 ];
 
 const Sidebar = ({
+    user,
     drawerWidth,
     isSidebarOpen,
     setIsSidebarOpen,
@@ -125,10 +126,10 @@ const Sidebar = ({
 
                             overflowY: "auto",
                             "&::-webkit-scrollbar": {
-                                display: "none"
+                                display: "none",
                             },
-                            scrollbarWidth: "none",  // Firefox
-                            msOverflowStyle: "none"  // IE and Edge
+                            scrollbarWidth: "none", // Firefox
+                            msOverflowStyle: "none", // IE and Edge
                         },
                     }}
                 >
@@ -176,14 +177,18 @@ const Sidebar = ({
                                             }}
                                             sx={{
                                                 "&.Mui-selected": {
-                                                  backgroundColor: theme.palette.secondary[300]
+                                                    backgroundColor:
+                                                        theme.palette
+                                                            .secondary[300],
                                                 },
                                                 backgroundColor: "transparent",
                                                 color:
-                                                  active === lcText
-                                                    ? theme.palette.primary[600]
-                                                    : theme.palette.secondary[200],
-                                              }}
+                                                    active === lcText
+                                                        ? theme.palette
+                                                              .primary[600]
+                                                        : theme.palette
+                                                              .secondary[200],
+                                            }}
                                         >
                                             <ListItemIcon
                                                 sx={{
@@ -209,6 +214,50 @@ const Sidebar = ({
                                 );
                             })}
                         </List>
+                    </Box>
+
+                    <Box mt="5rem">
+                        <Divider />
+                        <FlexBetween
+                            textTransform="none"
+                            gap="1rem"
+                            m="1.5rem 2rem 2rem 3rem"
+                        >
+                            <Box
+                                component="img"
+                                src={ProfileImg}
+                                alt="profile"
+                                width="40px"
+                                height="40px"
+                                borderRadius="50%"
+                                sx={{ objectFit: "cover" }}
+                            />
+                            <Box textAlign="left">
+                                <Typography
+                                    fontSize="0.9rem"
+                                    fontWeight="bold"
+                                    sx={{
+                                        color: theme.palette.secondary[100],
+                                    }}
+                                >
+                                    {user.name}
+                                </Typography>
+                                <Typography
+                                    fontSize="0.8rem"
+                                    sx={{
+                                        color: theme.palette.secondary[200],
+                                    }}
+                                >
+                                    {user.occupation}
+                                </Typography>
+                            </Box>
+                            <SettingsOutlined
+                                sx={{
+                                    color: theme.palette.secondary[300],
+                                    fontSize: "25px",
+                                }}
+                            />
+                        </FlexBetween>
                     </Box>
                 </Drawer>
             )}
